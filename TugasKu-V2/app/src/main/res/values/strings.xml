@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">TugasKu</string>
+    <string name="tugasku">TugasKu</string>
+    <string name="button_lihat">Lihat Daftar Tugas</string>
+    <string name="button_tambah">Tambah Daftar Tugas</string>
+    <string name="tambah_title">Tambah Daftar Tugas</string>
+    <string name="button_back">Kembali</string>
+    <string name="button_add">Tambah</string>
+    <string name="lihat_title">List Tugas</string>
+    <string name="list_tugas">Daftar Tugas</string>
+    <string name="add_tugas">Tambah Tugas</string>
+
+    <string-array name="list_task">
+        <item>Tugas 1</item>
+        <item>Tugas 2</item>
+        <item>Tugas 3</item>
+        <item>Tugas 4</item>
+        <item>Tugas 5</item>
+        <item>Tugas 6</item>
+        <item>Tugas 7</item>
+        <item>Tugas 8</item>
+        <item>Tugas 9</item>
+        <item>Tugas 10</item>
+    </string-array>
+
+    <string-array name="list_deadline">
+        <item>10/03/2022</item>
+        <item>11/03/2022</item>
+        <item>12/03/2022</item>
+        <item>13/03/2022</item>
+        <item>14/02/2022</item>
+        <item>15/02/2022</item>
+        <item>16/02/2022</item>
+        <item>17/02/2022</item>
+        <item>18/02/2022</item>
+        <item>19/02/2022</item>
+    </string-array>
+
+    <string-array name="list_catatan">
+        <item>Ini penjelasan Tugas 1</item>
+        <item>Ini penjelasan Tugas 2</item>
+        <item>Ini penjelasan Tugas 3</item>
+        <item>Ini penjelasan Tugas 4</item>
+        <item>Ini penjelasan Tugas 5</item>
+        <item>Ini penjelasan Tugas 6</item>
+        <item>Ini penjelasan Tugas 7</item>
+        <item>Ini penjelasan Tugas 8</item>
+        <item>Ini penjelasan Tugas 9</item>
+        <item>Ini penjelasan Tugas 10</item>
+    </string-array>
+
+    <string-array name="list_tglCreate">
+        <item>28/02/2022</item>
+        <item>01/03/2022</item>
+        <item>02/03/2022</item>
+        <item>03/03/2022</item>
+        <item>04/03/2022</item>
+        <item>05/03/2022</item>
+        <item>06/03/2022</item>
+        <item>07/03/2022</item>
+        <item>08/03/2022</item>
+        <item>09/03/2022</item>
+    </string-array>
+
+</resources>

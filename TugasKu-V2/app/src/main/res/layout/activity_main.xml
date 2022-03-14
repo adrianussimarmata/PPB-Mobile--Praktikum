@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="72dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:gravity="top"
+        android:text="@string/tugasku"
+        android:textAlignment="center"
+        android:textAppearance="@style/tugasku"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_lihat"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="44dp"
+        android:text="@string/button_lihat"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:onClick="lihat_tugas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_title" />
+
+    <Button
+        android:id="@+id/button_tambah"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="31dp"
+        android:text="@string/button_tambah"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        android:onClick="tambah_tugas"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_lihat"
+        app:layout_constraintVertical_bias="0.028" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
