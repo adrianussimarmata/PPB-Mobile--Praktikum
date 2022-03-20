@@ -7,8 +7,6 @@
     <string name="button_back">Kembali</string>
     <string name="button_add">Tambah</string>
     <string name="lihat_title">List Tugas</string>
-    <string name="list_tugas">Daftar Tugas</string>
-    <string name="add_tugas">Tambah Tugas</string>
 
     <string-array name="list_task">
         <item>Tugas 1</item>
