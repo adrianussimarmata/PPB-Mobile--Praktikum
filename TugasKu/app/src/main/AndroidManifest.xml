@@ -11,11 +11,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TugasKu">
         <activity
-            android:name=".MainActivity"
+            android:name=".DetailTaskActivity"
             android:exported="true" />
         <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+        <activity
             android:name=".LihatActivity"
-            android:label="@string/app_name"
+            android:label="@string/list_tugas"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -23,7 +27,7 @@
         </activity>
         <activity
             android:name=".TambahActivity"
-            android:label="@string/app_name"
+            android:label="@string/add_tugas"
             android:parentActivityName=".MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

@@ -11,29 +11,31 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
-    String dataTask[], dataDL[], dataCreate[];
+    String dataTask[], dataDL[], dataCreate[], dataCatatan[];
     Context context;
 
-    public MyAdapter(Context ct, String s1[], String s2[], String s3[]) {
+    public MyAdapter(Context ct, String s1[], String s2[], String s3[], String s4[]) {
         context = ct;
         dataTask = s1;
-        dataDL = s2;
-        dataCreate = s3;
+        dataCreate = s2;
+        dataDL = s3;
+        dataCatatan = s4;
     }
 
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.my_row, parent, false);
+        View view = inflater.inflate(R.layout.task_item, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.text1.setText(dataTask[position]);
-        holder.text2.setText(dataDL[position]);
-        holder.text3.setText(dataCreate[position]);
+        holder.textTitle.setText(dataTask[position]);
+        holder.textCreate.setText(dataCreate[position]);
+        holder.textDeadline.setText(dataDL[position]);
+        holder.textNote.setText(dataCatatan[position]);
     }
 
     @Override
@@ -43,13 +45,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
-        TextView text1, text2, text3;
+        TextView textTitle, textCreate, textDeadline, textNote;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            text1 = itemView.findViewById(R.id.text_task);
-            text2 = itemView.findViewById(R.id.text_deadline);
-            text3 = itemView.findViewById(R.id.text_tglCreate);
+            textTitle = itemView.findViewById(R.id.text_task);
+            textCreate = itemView.findViewById(R.id.text_tglCreate);
+            textDeadline = itemView.findViewById(R.id.text_deadline);
+            textNote = itemView.findViewById(R.id.text_note);
         }
     }
 }

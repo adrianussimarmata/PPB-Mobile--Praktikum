@@ -34,7 +34,6 @@
         android:text="@string/button_lihat"
         android:textColor="@color/black"
         android:textSize="15sp"
-        android:onClick="lihat_tugas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"

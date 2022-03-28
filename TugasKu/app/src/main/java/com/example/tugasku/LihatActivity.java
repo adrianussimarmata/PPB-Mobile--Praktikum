@@ -2,66 +2,51 @@ package com.example.tugasku;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.List;
 
 public class LihatActivity extends AppCompatActivity {
 
-    // LiveData
-    TugasViewModel tugasViewModel;
-
-    TugasAdapter tugasAdapter;
-
-    RecyclerView recyclerView;
+    private RecyclerView recyclerView;
+    private TaskViewModel taskViewModel;
+    private TaskAdapter taskAdapter;
+//    private String task[], tglCreate[], deadline[], note[];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lihat);
 
-        tugasViewModel = new ViewModelProvider(this).get(TugasViewModel.class);
-        tugasAdapter = new TugasAdapter();
         recyclerView = findViewById(R.id.recycler_view);
-
-        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setHasFixedSize(true);
 
-        tugasViewModel.getAllTugas().observe(this, new Observer<List<Tugas>>() {
+        taskAdapter = new TaskAdapter();
+        recyclerView.setAdapter(taskAdapter);
+
+        taskViewModel = new ViewModelProvider(this).get(TaskViewModel.class);
+        taskViewModel.getAllTasks().observe(this, new Observer<List<Task>>() {
             @Override
-            public void onChanged(List<Tugas> tugases) {
-                if (tugases.size() > 0) {
-                    tugasAdapter.setData(tugases);
-                    recyclerView.setAdapter(tugasAdapter);
-                }
+            public void onChanged(List<Task> tasks) {
+//                Toast.makeText(LihatActivity.this, "onChanged", Toast.LENGTH_SHORT).show();
+                taskAdapter.setTasks(tasks);
             }
         });
-    }
 
-    // Data Dummy
-//    RecyclerView recyclerView;
-//    String task[], deadline[], note[], create[];
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_lihat);
-//
 //        recyclerView = findViewById(R.id.recycler_view);
-//
 //        task = getResources().getStringArray(R.array.list_task);
+//        tglCreate = getResources().getStringArray(R.array.list_tglCreate);
 //        deadline = getResources().getStringArray(R.array.list_deadline);
 //        note = getResources().getStringArray(R.array.list_catatan);
-//        create = getResources().getStringArray(R.array.list_tglCreate);
 //
-//        MyAdapter myAdapter = new MyAdapter(this, task, deadline, create);
+//        myAdapter = new MyAdapter(this, task, tglCreate, deadline, note);
 //        recyclerView.setAdapter(myAdapter);
 //        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-//    }
+    }
 }
