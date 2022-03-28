@@ -12,11 +12,6 @@ import android.widget.Toast;
 
 public class TambahActivity extends AppCompatActivity {
 
-    public static final String EXTRA_TITLE = "com.example.tugasku.EXTRA_TITLE";
-    public static final String EXTRA_CREATE = "com.example.tugasku.EXTRA_CREATE";
-    public static final String EXTRA_DEADLINE = "com.example.tugasku.EXTRA_DEADLINE";
-    public static final String EXTRA_NOTE = "com.example.tugasku.EXTRA_NOTE";
-
     private EditText editTextTitle;
     private EditText editTextCreate;
     private EditText editTextDeadline;
@@ -43,9 +38,9 @@ public class TambahActivity extends AppCompatActivity {
                 String catatan = editTextNote.getText().toString();
                 Intent intent = new Intent();
                 if(title.trim().isEmpty() || tglCreate.trim().isEmpty() || deadline.trim().isEmpty()) {
-                    Toast.makeText(TambahActivity.this, "Gagal", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TambahActivity.this, "Tugas gagal ditambahkan", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(TambahActivity.this, "Berhasil", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TambahActivity.this, "Tugas berhasil ditambahkan", Toast.LENGTH_SHORT).show();
                     Task task = new Task(title, tglCreate, deadline, catatan);
                     TaskViewModel taskViewModel = new ViewModelProvider(TambahActivity.this).get(TaskViewModel.class);
                     taskViewModel.insert(task);

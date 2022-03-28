@@ -27,7 +27,7 @@ public class LihatActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
 
-        taskAdapter = new TaskAdapter();
+        taskAdapter = new TaskAdapter(this);
         recyclerView.setAdapter(taskAdapter);
 
         taskViewModel = new ViewModelProvider(this).get(TaskViewModel.class);

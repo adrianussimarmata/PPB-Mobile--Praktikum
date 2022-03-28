@@ -52,7 +52,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
             textTitle = itemView.findViewById(R.id.text_task);
             textCreate = itemView.findViewById(R.id.text_tglCreate);
             textDeadline = itemView.findViewById(R.id.text_deadline);
-            textNote = itemView.findViewById(R.id.text_note);
+//            textNote = itemView.findViewById(R.id.text_note);
         }
     }
 }
