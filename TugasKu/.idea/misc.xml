@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/SEMESTER 4/PPB (Mobile)/Github/PPB-Mobile--Praktikum/TugasKu/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.2203125" />
         <entry key="..\:/SEMESTER 4/PPB (Mobile)/Github/PPB-Mobile--Praktikum/TugasKu/app/src/main/res/layout/activity_lihat.xml" value="0.33" />
         <entry key="..\:/SEMESTER 4/PPB (Mobile)/Github/PPB-Mobile--Praktikum/TugasKu/app/src/main/res/layout/activity_tambah.xml" value="0.33" />
+        <entry key="..\:/SEMESTER 4/PPB (Mobile)/Github/PPB-Mobile--Praktikum/TugasKu/app/src/main/res/layout/task_item.xml" value="0.5" />
         <entry key="..\:/SEMESTER 4/PPB (Mobile)/Project/TugasKu/app/src/main/res/layout/activity_lihat.xml" value="0.33" />
         <entry key="..\:/SEMESTER 4/PPB (Mobile)/Project/TugasKu/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/SEMESTER 4/PPB (Mobile)/Project/TugasKu/app/src/main/res/layout/activity_splash_screen.xml" value="0.33" />
