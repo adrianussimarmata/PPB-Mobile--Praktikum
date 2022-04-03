@@ -83,6 +83,7 @@
         android:textSize="15sp"
         android:inputType="textPersonName"
         android:hint="Nama Tugas"
+        android:background="@android:drawable/editbox_background"
         app:layout_constraintStart_toStartOf="@+id/text_tugas"
         app:layout_constraintTop_toBottomOf="@+id/text_tugas" />
 
@@ -98,6 +99,7 @@
         android:inputType="date"
         android:hint="Tanggal tugas diberikan"
         android:focusable="false"
+        android:background="@android:drawable/editbox_background"
         app:layout_constraintStart_toStartOf="@+id/text_tglCreate"
         app:layout_constraintTop_toBottomOf="@+id/text_tglCreate"/>
 
@@ -113,6 +115,7 @@
         android:inputType="date"
         android:hint="Deadline tugas"
         android:focusable="false"
+        android:background="@android:drawable/editbox_background"
         app:layout_constraintStart_toStartOf="@+id/text_deadline"
         app:layout_constraintTop_toBottomOf="@+id/text_deadline"/>
 
@@ -124,10 +127,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:ems="10"
+        android:lines="4"
         android:textSize="15sp"
         android:gravity="start|top"
         android:hint="Catatan Tugas"
         android:inputType="textMultiLine"
+        android:background="@android:drawable/editbox_background"
         app:layout_constraintStart_toStartOf="@+id/text_catatan"
         app:layout_constraintTop_toBottomOf="@+id/text_catatan" />
 
