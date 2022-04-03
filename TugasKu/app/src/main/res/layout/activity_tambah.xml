@@ -95,7 +95,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:textSize="15sp"
-        android:inputType="textPersonName"
+        android:inputType="date"
         android:hint="Contoh : (01/01/2022)"
         app:layout_constraintStart_toStartOf="@+id/text_tglCreate"
         app:layout_constraintTop_toBottomOf="@+id/text_tglCreate"/>
@@ -109,7 +109,7 @@
         android:layout_marginEnd="16dp"
         android:ems="10"
         android:textSize="15sp"
-        android:inputType="textPersonName"
+        android:inputType="date"
         android:hint="Contoh : (01/01/2022)"
         app:layout_constraintStart_toStartOf="@+id/text_deadline"
         app:layout_constraintTop_toBottomOf="@+id/text_deadline"/>
