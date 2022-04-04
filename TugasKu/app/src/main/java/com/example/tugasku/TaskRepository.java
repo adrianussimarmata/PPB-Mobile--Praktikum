@@ -47,9 +47,9 @@ public class TaskRepository {
 //        new UpdateTaskAsyncTask(taskDao).execute(task);
 //    }
 //
-//    public void delete(Task task) {
-//        new DeleteTaskAsyncTask(taskDao).execute(task);
-//    }
+    public void delete(Task task) {
+        new DeleteTaskAsyncTask(taskDao).execute(task);
+    }
 //
 //    public void deleteAllTask() {
 //        new DeleteAllTasksAsyncTask(taskDao).execute();
@@ -70,20 +70,20 @@ public class TaskRepository {
 //        }
 //    }
 //
-//    private static class DeleteTaskAsyncTask extends AsyncTask<Task, Void, Void> {
-//
-//        private TaskDao taskDao;
-//
-//        private DeleteTaskAsyncTask(TaskDao taskDao){
-//            this.taskDao = taskDao;
-//        }
-//
-//        @Override
-//        protected Void doInBackground(Task... tasks) {
-//            taskDao.delete(tasks[0]);
-//            return null;
-//        }
-//    }
+    private static class DeleteTaskAsyncTask extends AsyncTask<Task, Void, Void> {
+
+        private TaskDao taskDao;
+
+        private DeleteTaskAsyncTask(TaskDao taskDao){
+            this.taskDao = taskDao;
+        }
+
+        @Override
+        protected Void doInBackground(Task... tasks) {
+            taskDao.delete(tasks[0]);
+            return null;
+        }
+    }
 //
 //    private static class DeleteAllTasksAsyncTask extends AsyncTask<Void, Void, Void> {
 //
