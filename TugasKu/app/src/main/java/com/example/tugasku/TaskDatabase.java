@@ -39,9 +39,9 @@ public abstract class TaskDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            taskDao.insert(new Task("Title 1", "01-01-2022", "31-12-2022", "Description Task 1"));
-            taskDao.insert(new Task("Title 2", "02-01-2022", "31-12-2022", "Description Task 2"));
-            taskDao.insert(new Task("Title 3", "03-01-2022", "31-12-2022", "Description Task 3"));
+            taskDao.insert(new Task("Title 1", "01/1/2022", "31/12/2022", "Description Task 1"));
+            taskDao.insert(new Task("Title 2", "02/1/2022", "31/12/2022", "Description Task 2"));
+            taskDao.insert(new Task("Title 3", "03/1/2022", "31/12/2022", "Description Task 3"));
 
             return null;
         }
