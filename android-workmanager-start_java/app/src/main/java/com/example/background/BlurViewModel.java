@@ -76,20 +76,6 @@ public class BlurViewModel extends ViewModel {
      * Create the WorkRequest to apply the blur and save the resulting image
      * @param blurLevel The amount to blur the image
      */
-//    void applyBlur(int blurLevel) {
-//        WorkContinuation continuation = mWorkManager.beginWith(OneTimeWorkRequest.from(CleanupWorker.class));
-//        OneTimeWorkRequest blurRequest = new OneTimeWorkRequest.Builder(BlurWorker.class)
-//                .setInputData(createInputDataForUri())
-//                .build();
-//        continuation = continuation.then(blurRequest);
-//
-//        OneTimeWorkRequest save = new OneTimeWorkRequest.Builder(SaveImageToFileWorker.class)
-//                .build();
-//        continuation = continuation.then(save);
-//
-//        continuation.enqueue();
-//
-//    }
 
     void applyBlur(int blurLevel) {
 
@@ -162,6 +148,10 @@ public class BlurViewModel extends ViewModel {
             builder.putString(KEY_IMAGE_URI, mImageUri.toString());
         }
         return builder.build();
+    }
+    
+    void cancelWork() {
+        mWorkManager.cancelUniqueWork(IMAGE_MANIPULATION_WORK_NAME);
     }
 
 }
