@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class TambahActivity extends AppCompatActivity {
@@ -32,39 +35,19 @@ public class TambahActivity extends AppCompatActivity {
         editTextDeadline = findViewById(R.id.editTextDeadline);
         editTextNote = findViewById(R.id.editTextCatatan);
 
-        // calender class's instance and get current date , month and year from calender
         Calendar c = Calendar.getInstance();
-        int mYear = c.get(Calendar.YEAR); // current year
-        int mMonth = c.get(Calendar.MONTH); // current month
-        int mDay = c.get(Calendar.DAY_OF_MONTH); // current day
-
         editTextCreate.setOnClickListener(new View.OnClickListener() {
+
             @Override
-            public void onClick(View v) {
-                // date picker dialog
-                DatePickerDialog datePickerDialog = new DatePickerDialog(TambahActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int day) {
-                        // set day of month , month and year value in the edit text
-                        editTextCreate.setText(day + "/" + (month + 1) + "/" + year);
-                    }
-                }, mYear, mMonth, mDay);
-                datePickerDialog.show();
+            public void onClick(View view) {
+                showDateTimeDialog(editTextCreate);
             }
         });
 
         editTextDeadline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // date picker dialog
-                DatePickerDialog datePickerDialog = new DatePickerDialog(TambahActivity.this, new DatePickerDialog.OnDateSetListener() {
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int month, int day) {
-                        // set day of month , month and year value in the edit text
-                        editTextDeadline.setText(day + "/" + (month + 1) + "/" + year);
-                    }
-                }, mYear, mMonth, mDay);
-                datePickerDialog.show();
+                showDateTimeDialog(editTextDeadline);
             }
         });
 
@@ -88,5 +71,30 @@ public class TambahActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    private void showDateTimeDialog(EditText date_time_in) {
+        Calendar calendar = Calendar.getInstance();
+        DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, month);
+                calendar.set(Calendar.DAY_OF_MONTH, day);
+
+                TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int hourOfDay, int minute) {
+                        calendar.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                        calendar.set(Calendar.MINUTE, minute);
+
+                        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                        date_time_in.setText(simpleDateFormat.format(calendar.getTime()));
+                    }
+                };
+                new TimePickerDialog(TambahActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true).show();
+            }
+        };
+        new DatePickerDialog(TambahActivity.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
     }
 }

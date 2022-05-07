@@ -101,7 +101,7 @@ public class BlurViewModel extends ViewModel {
         }
 
         Constraints constraints = new Constraints.Builder()
-                .setRequiresCharging(true)
+                .setRequiresCharging(false)
                 .build();
 
         // Add WorkRequest to save the image to the filesystem
