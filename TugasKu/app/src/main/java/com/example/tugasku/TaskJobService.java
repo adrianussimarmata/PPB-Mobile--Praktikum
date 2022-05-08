@@ -7,6 +7,7 @@ import android.app.job.JobParameters;
 import android.app.job.JobService;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 
 import androidx.core.app.NotificationCompat;
@@ -17,6 +18,7 @@ import java.util.Calendar;
 
 public class TaskJobService extends JobService {
 
+    NotificationManager manager;
     private static final String PRIMARY_CHANNEL_ID = "primary_notification_channel";
     private static final String NOTIFICATION_TITLE = "Sudah cek tugas hari ini ?";
     private static final String NOTIFICATION_MESSAGE = "Yuk cek tugas kamu hari ini.";
@@ -46,18 +48,21 @@ public class TaskJobService extends JobService {
     }
 
     private void createNotificationChannel() {
+        manager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel("My Notification", "My Notification", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationChannel channel = new NotificationChannel(PRIMARY_CHANNEL_ID,
+                    "My Notification", NotificationManager.IMPORTANCE_HIGH);
             channel.setDescription("Notification description");
             channel.enableVibration(true);
+            channel.enableLights(true);
+            channel.setLightColor(Color.RED);
 
-            NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel);
         }
     }
 
-    static void makeNotification(String title, String message, Context context) {
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(context, LihatActivity.class), PendingIntent.FLAG_UPDATE_CURRENT);
+    private void makeNotification(String title, String message, Context context) {
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, new Intent(context, SeeTaskActivity.class), PendingIntent.FLAG_UPDATE_CURRENT);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, PRIMARY_CHANNEL_ID)
                 .setContentIntent(pendingIntent)
@@ -65,9 +70,9 @@ public class TaskJobService extends JobService {
                 .setContentText(message)
                 .setSmallIcon(R.drawable.ic_baseline_notifications_24)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setDefaults(NotificationCompat.DEFAULT_ALL)
                 .setAutoCancel(true);
 
-        NotificationManagerCompat managerCompat = NotificationManagerCompat.from(context);
-        managerCompat.notify(1, builder.build());
+        manager.notify(0, builder.build());
     }
 }

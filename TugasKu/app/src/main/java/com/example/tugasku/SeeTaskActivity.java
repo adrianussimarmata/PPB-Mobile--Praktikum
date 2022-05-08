@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-public class LihatActivity extends AppCompatActivity {
+public class SeeTaskActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private TaskViewModel taskViewModel;
@@ -23,7 +23,7 @@ public class LihatActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lihat);
+        setContentView(R.layout.activity_see_task);
 
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -36,7 +36,7 @@ public class LihatActivity extends AppCompatActivity {
         taskViewModel.getAllTasks().observe(this, new Observer<List<Task>>() {
             @Override
             public void onChanged(List<Task> tasks) {
-//                Toast.makeText(LihatActivity.this, "onChanged", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(SeeTaskActivity.this, "onChanged", Toast.LENGTH_SHORT).show();
                 taskAdapter.setTasks(tasks);
             }
         });
@@ -50,7 +50,7 @@ public class LihatActivity extends AppCompatActivity {
             @Override
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 taskViewModel.delete(taskAdapter.getTaskAt(viewHolder.getAdapterPosition()));
-                Toast.makeText(LihatActivity.this, "Tugas telah dihapus", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SeeTaskActivity.this, "Tugas telah dihapus", Toast.LENGTH_SHORT).show();
             }
         }).attachToRecyclerView(recyclerView);
 

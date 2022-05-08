@@ -16,12 +16,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void add_task(View view) {
-        Intent intent = new Intent(MainActivity.this, TambahActivity.class);
+        Intent intent = new Intent(MainActivity.this, AddTaskActivity.class);
         startActivity(intent);
     }
 
     public void see_task(View view) {
-        Intent intent = new Intent(MainActivity.this, LihatActivity.class);
+        Intent intent = new Intent(MainActivity.this, SeeTaskActivity.class);
         startActivity(intent);
     }
 }

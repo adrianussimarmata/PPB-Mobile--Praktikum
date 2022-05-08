@@ -17,7 +17,7 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class TambahActivity extends AppCompatActivity {
+public class AddTaskActivity extends AppCompatActivity {
 
     private EditText editTextTitle;
     private EditText editTextCreate;
@@ -28,7 +28,7 @@ public class TambahActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tambah);
+        setContentView(R.layout.activity_add_task);
 
         editTextTitle = findViewById(R.id.editTextJudul);
         editTextCreate = findViewById(R.id.editTextCreate);
@@ -61,11 +61,11 @@ public class TambahActivity extends AppCompatActivity {
                 String catatan = editTextNote.getText().toString();
                 Intent intent = new Intent();
                 if(title.trim().isEmpty() || tglCreate.trim().isEmpty() || deadline.trim().isEmpty()) {
-                    Toast.makeText(TambahActivity.this, "Tugas gagal ditambahkan", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddTaskActivity.this, "Tugas gagal ditambahkan", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(TambahActivity.this, "Tugas berhasil ditambahkan", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AddTaskActivity.this, "Tugas berhasil ditambahkan", Toast.LENGTH_SHORT).show();
                     Task task = new Task(title, tglCreate, deadline, catatan);
-                    TaskViewModel taskViewModel = new ViewModelProvider(TambahActivity.this).get(TaskViewModel.class);
+                    TaskViewModel taskViewModel = new ViewModelProvider(AddTaskActivity.this).get(TaskViewModel.class);
                     taskViewModel.insert(task);
                 }
                 finish();
@@ -92,9 +92,9 @@ public class TambahActivity extends AppCompatActivity {
                         date_time_in.setText(simpleDateFormat.format(calendar.getTime()));
                     }
                 };
-                new TimePickerDialog(TambahActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true).show();
+                new TimePickerDialog(AddTaskActivity.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true).show();
             }
         };
-        new DatePickerDialog(TambahActivity.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
+        new DatePickerDialog(AddTaskActivity.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH)).show();
     }
 }

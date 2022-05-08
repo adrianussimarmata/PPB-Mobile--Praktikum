@@ -13,7 +13,7 @@
         <activity
             android:name=".DetailTaskActivity"
             android:label="Detail Tugas"
-            android:parentActivityName=".LihatActivity">
+            android:parentActivityName=".SeeTaskActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.tugasku.MainActivity" />
@@ -22,7 +22,7 @@
             android:exported="true"
             android:launchMode="singleTop" />
         <activity
-            android:name=".LihatActivity"
+            android:name=".SeeTaskActivity"
             android:label="@string/list_tugas"
             android:parentActivityName=".MainActivity">
             <meta-data
@@ -30,7 +30,7 @@
                 android:value="com.example.tugasku.MainActivity" />
         </activity>
         <activity
-            android:name=".TambahActivity"
+            android:name=".AddTaskActivity"
             android:label="@string/add_tugas"
             android:parentActivityName=".MainActivity">
             <meta-data
