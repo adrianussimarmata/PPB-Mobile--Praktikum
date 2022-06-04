@@ -78,4 +78,18 @@
         app:layout_constraintStart_toStartOf="@id/text_field_deadline"
         app:layout_constraintTop_toBottomOf="@id/text_field_deadline"/>
 
+    <Button
+        android:id="@+id/button_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:onClick="edit_task"
+        android:text="Edit"
+        app:layout_constraintBottom_toBottomOf="@+id/view_task_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

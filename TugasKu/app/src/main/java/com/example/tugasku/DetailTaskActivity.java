@@ -2,7 +2,9 @@ package com.example.tugasku;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,5 +45,10 @@ public class DetailTaskActivity extends AppCompatActivity {
         title.setText(mTitle);
         deadline.setText(mDeadline);
         note.setText(mNote);
+    }
+
+    public void edit_task(View view) {
+        Intent intent = new Intent(this, EditTaskActivity.class);
+        startActivity(intent);
     }
 }

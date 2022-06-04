@@ -11,13 +11,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TugasKu">
         <activity
+            android:name=".EditTaskActivity"
+            android:label="Edit Tugas"
+            android:parentActivityName=".SeeTaskActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.tugasku.MainActivity" />
+        </activity>
+        <activity
             android:name=".DetailTaskActivity"
             android:label="Detail Tugas"
             android:parentActivityName=".SeeTaskActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.tugasku.MainActivity" />
-        </activity>        <activity
+        </activity>
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:launchMode="singleTop" />
@@ -46,9 +55,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".TaskJobService"
-            android:permission="android.permission.BIND_JOB_SERVICE">
-        </service>
+
+        <service
+            android:name=".TaskJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE"></service>
     </application>
 
 </manifest>
