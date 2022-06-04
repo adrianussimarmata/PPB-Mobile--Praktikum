@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.retrofitproject">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.RetrofitProject">
+        <activity
+            android:name=".DELETE.DeleteActivity"
+            android:label="Delete"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".PATCH.updatePatch.UpdatePatchActivity"
+            android:label="Update PATCH"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".PUT.update.UpdateActivity"
+            android:label="Update"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".POST.login_unsuccessful.LoginUnsuccessfulActivity"
+            android:label="Login Unsuccessful"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".POST.login_successful.LoginSuccessfulActivity"
+            android:label="Login Successful"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".POST.register_unsuccessful.RegisterUnsuccessfulActivity"
+            android:label="Register Unsuccessful"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".POST.register_successful.RegisterSuccessfulActivity"
+            android:label="Register Successful"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".POST.create.CreateActivity"
+            android:label="Post Create"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".GET.delayed_response.DelayedResponseActivity"
+            android:label="Delayed Response"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".GET.single_resource_not_found.SingleResourceNotFoundActivity"
+            android:label="Single Resource Not Found"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".GET.single_resource.SingleResourceActivity"
+            android:label="Single Resource"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".GET.list_resource.ListResourceActivity"
+            android:label="List Resource"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".GET.single_user_not_found.SingleUserNotFoundActivity"
+            android:label="Single User Not Found"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".GET.single_user.SingleUserActivity"
+            android:label="Single User"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".GET.list_user.ListUserActivity"
+            android:label="List Users"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.retrofitproject.MainActivity" />
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
