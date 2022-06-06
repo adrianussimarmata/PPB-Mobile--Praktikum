@@ -1,0 +1,4 @@
+#Tue Jun 07 02:45:10 ICT 2022
+base.0=E\:\\KULIAH JTK POLBAN\\SEMESTER 4\\PPB (Mobile)\\Project\\android-fundamentals-apps-v2-master\\Scorekeeper\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
